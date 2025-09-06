@@ -7,8 +7,7 @@ spec:
   selector:
     app: mern-backend
   ports:
-    # - protocol: TCP
-    - port: 80
+    - protocol: TCP
+      port: 5000
       targetPort: 5000
-      nodePort: 32000
-  type: NodePort
+  type: ClusterIP
