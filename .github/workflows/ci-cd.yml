@@ -38,7 +38,7 @@ jobs:
             echo ">>> Applying manifests on Kind cluster"
             cd /home/ubuntu/mern-app/mern-app-with-k8s-github-actions-aws   # adjust path
             git pull origin master
-            kubectl delete -f k8s/
+            kubectl delete -f k8s/namespace.yml
             kubectl apply -f k8s/namespace.yml
             kubectl apply -f k8s/deployment.yml
             kubectl apply -f k8s/service.yml
