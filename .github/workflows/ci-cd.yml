@@ -3,7 +3,7 @@ name: CI/CD to Kind on EC2
 on:
   push:
     branches:
-      - mster # change if needed
+      - master # change if needed
 
 jobs:
   build-and-deploy:
