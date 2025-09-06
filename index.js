@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.status(200).send({
-    msg: "Hello, This is Node js CI CD Devops project with docker and aws ec216",
+    msg: "Hello, This is Node js CI CD Devops project with docker and aws ec21612",
   });
 });
 
