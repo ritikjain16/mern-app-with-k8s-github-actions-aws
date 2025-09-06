@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mern-backend
-          image: rj1608/mern-backend:v1
+          image: rj1608/mern-backend:v2
           imagePullPolicy: Always
           ports:
             - containerPort: 80
