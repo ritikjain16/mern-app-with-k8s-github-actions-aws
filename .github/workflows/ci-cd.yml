@@ -39,7 +39,9 @@ jobs:
             cd /home/ubuntu/mern-app/mern-app-with-k8s-github-actions-aws   # adjust path
             git pull origin master
             kubectl delete -f k8s/
-            kubectl apply -f k8s/
+            kubectl apply -f k8s/namespace.yml
+            kubectl apply -f k8s/deployment.yml
+            kubectl apply -f k8s/service.yml
             # kubectl rollout restart deployment mern-backend-deployment -n mern-app
             nohup kubectl port-forward service/mern-backend-service -n mern-app 4000:5000 --address=0.0.0.0 > "BACKEND_FORWARD_LOG" 2>&1 &
             # kubectl rollout status deployment/myapp
