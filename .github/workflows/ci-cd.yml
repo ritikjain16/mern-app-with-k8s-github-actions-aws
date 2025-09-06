@@ -1,4 +1,4 @@
-mern-backend: CI/CD to Kind on EC2
+name: CI/CD to Kind on EC2
 
 on:
   push:
