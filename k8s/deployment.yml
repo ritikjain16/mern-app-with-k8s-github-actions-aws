@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+mern-backend:nd: apps/v1
 kind: Deployment
 metadata:
   name: mern-backend-deployment
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mern-backend
-          image: rj1608/mern-backend
+          image: rj1608/mern-backend:v2
           imagePullPolicy: Always
           ports:
             - containerPort: 80
