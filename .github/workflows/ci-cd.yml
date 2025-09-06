@@ -22,7 +22,7 @@ jobs:
 
       - name: Build and Push Image
         run: |
-          IMAGE=rj1608/mern-backend:latest
+          IMAGE=${{ secrets.DOCKER_USERNAME }}/mern-backend:latest
           docker build -t $IMAGE .
           docker push $IMAGE
 
