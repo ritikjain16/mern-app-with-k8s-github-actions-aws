@@ -99,6 +99,8 @@ jobs:
             cd /home/ubuntu/mern-app/mern-app-with-k8s-github-actions-aws
             git pull origin master
 
+            echo ">>> Using IMAGE=$IMAGE"   # 👈 print the IMAGE value
+
             echo ">>> Updating Deployment"
             kubectl set image deployment/mern-backend-deployment \
               mern-backend=$IMAGE \
