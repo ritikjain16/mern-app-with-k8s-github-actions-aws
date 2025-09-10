@@ -22,7 +22,7 @@ jobs:
 
       - name: Build and Push Image
         run: |
-          IMAGE=${{ secrets.DOCKER_USERNAME }}/mern-backend:v3
+          IMAGE=${{ secrets.DOCKER_USERNAME }}/mern-backend:v4
           docker build -t $IMAGE .
           docker push $IMAGE
 
