@@ -40,4 +40,4 @@ jobs:
             git pull origin master
             kubectl apply -f k8s/deployment.yml
             kubectl apply -f k8s/service.yml
-            kubectl rollout status deployment/myapp
+            kubectl rollout status deployment/mern-backend-deployment
