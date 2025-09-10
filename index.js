@@ -17,6 +17,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/hi", (req, res) => {
+  res.status(200).send({
+    msg: "Hi, I have successfully deployed my devops project with docker and kind cluster via NodePort with github Actions",
+  });
+});
+
 app.get("/hello", (req, res) => {
   res.status(200).send({
     msg: "Hello, This is Node js CI CD Devops project with docker and aws ec2 222",
