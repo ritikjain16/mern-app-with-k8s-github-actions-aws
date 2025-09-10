@@ -36,13 +36,8 @@ jobs:
           script: |
             set -e
             echo ">>> Applying manifests on Kind cluster"
-            cd /home/ubuntu/mern-app/mern-app-with-k8s-github-actions-aws   # adjust path
+            cd /home/ubuntu/mern-app/mern-app-with-k8s-github-actions-aws
             git pull origin master
-            kubectl apply -f k8s/
-            # # kubectl delete -f k8s/namespace.yml
-            # kubectl apply -f k8s/namespace.yml
-            # kubectl apply -f k8s/deployment.yml
-            # kubectl apply -f k8s/service.yml
-            # kubectl rollout restart deployment mern-backend-deployment -n mern-app
-            # nohup kubectl port-forward service/mern-backend-service -n mern-app 4000:5000 --address=0.0.0.0 > "BACKEND_FORWARD_LOG" 2>&1 &
-            # kubectl rollout status deployment/myapp
+            kubectl apply -f k8s/deployment.yml
+            kubectl apply -f k8s/service.yml
+            kubectl rollout status deployment/myapp
