@@ -106,7 +106,7 @@ jobs:
 
             # Update image with the one built in this pipeline
             kubectl set image deployment/mern-backend-deployment \
-              mern-backend-container=$IMAGE \
+              mern-backend=$IMAGE \
               -n mern-app
 
             # Wait for rollout
