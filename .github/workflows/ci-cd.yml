@@ -100,10 +100,11 @@ jobs:
             git pull origin master
 
             echo ">>> Using IMAGE=$IMAGE"   # 👈 print the IMAGE value
+            echo ">>> Using IMAGE=${{ secrets.DOCKER_USERNAME }}/mern-backend:${{ github.sha }}"   # 👈 print the IMAGE value
 
             echo ">>> Updating Deployment"
             kubectl set image deployment/mern-backend-deployment \
-              mern-backend=$IMAGE \
+              mern-backend=${{ secrets.DOCKER_USERNAME }}/mern-backend:${{ github.sha }} \
               -n mern-app
 
             echo ">>> Rolling out deployment"
