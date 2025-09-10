@@ -1,60 +1,3 @@
-# name: CI/CD to Kind on EC2
-
-# on:
-#   push:
-#     branches:
-#       - master # change if needed
-
-# jobs:
-#   build-and-deploy:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - name: Checkout Code
-#         uses: actions/checkout@v3
-
-#       # 1. Build & Push Docker Image to Docker Hub
-#       - name: Login to DockerHub
-#         uses: docker/login-action@v2
-#         with:
-#           username: ${{ secrets.DOCKER_USERNAME }}
-#           password: ${{ secrets.DOCKER_PASSWORD }}
-
-#       # - name: Build and Push Image
-#       #   run: |
-#       #     IMAGE=${{ secrets.DOCKER_USERNAME }}/mern-backend:v4
-#       #     docker build -t $IMAGE .
-#       #     docker push $IMAGE
-
-#       - name: Build and Push Image
-#         run: |
-#           IMAGE=${{ secrets.DOCKER_USERNAME }}/mern-backend
-#           TAG=${GITHUB_SHA}   # unique tag per commit
-#           docker build -t $IMAGE:$TAG .
-#           docker push $IMAGE:$TAG
-#           echo "IMAGE=$IMAGE:$TAG" >> $GITHUB_ENV
-
-#       # 2. Update Deployment manifest with new image
-#       - name: Update deployment.yml with new image
-#         run: |
-#           sed -i "s|image: .*|image: $IMAGE|" k8s/deployment.yml
-
-#       # 2. SSH into EC2 & Deploy to Kind
-#       - name: Deploy on EC2 Kind Cluster
-#         uses: appleboy/ssh-action@v0.1.10
-#         with:
-#           host: ${{ secrets.EC2_HOST }}
-#           username: ${{ secrets.EC2_USER }}
-#           key: ${{ secrets.EC2_KEY }}
-#           script: |
-#             set -e
-#             echo ">>> Applying manifests on Kind cluster"
-#             cd /home/ubuntu/mern-app/mern-app-with-k8s-github-actions-aws
-#             git pull origin master
-#             kubectl apply -f k8s/deployment.yml
-#             kubectl apply -f k8s/service.yml
-#             kubectl rollout status deployment/mern-backend-deployment -n mern-app
-
 name: CI/CD to Kind on EC2
 
 on:
@@ -99,7 +42,6 @@ jobs:
             cd /home/ubuntu/mern-app/mern-app-with-k8s-github-actions-aws
             git pull origin master
 
-            echo ">>> Using IMAGE=$IMAGE"   # 👈 print the IMAGE value
             echo ">>> Using IMAGE=${{ secrets.DOCKER_USERNAME }}/mern-backend:${{ github.sha }}"   # 👈 print the IMAGE value
 
             echo ">>> Updating Deployment"
