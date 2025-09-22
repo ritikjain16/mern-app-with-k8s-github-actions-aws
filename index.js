@@ -13,13 +13,13 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.status(200).send({
-    msg: "Hello, This is Node js CI CD Devops project rj16082000",
+    msg: "Hello, This is Node js CI CD Devops project rj1608",
   });
 });
 
 app.get("/hi", (req, res) => {
   res.status(200).send({
-    msg: "Hi, I have successfully deployed my devops project with docker and kind cluster via NodePort with github Actions",
+    msg: "Hi, I have successfully deployed my devops project with docker and kind cluster via NodePort with github Actions automatically",
   });
 });
 
