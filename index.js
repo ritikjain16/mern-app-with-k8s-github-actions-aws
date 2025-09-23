@@ -1,4 +1,4 @@
-Ritik,express from "express";
+import expresss from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -19,7 +19,7 @@ app.get("/api", (req, res) => {
 
 app.get("/api/hi", (req, res) => {
   res.status(200).send({
-    msg: "Hi, Ritik Harsha I have successfully deployed my devops project with docker and kind cluster via NodePort with github Actions automatically",
+    msg: "Hi, Ritik1 Harsha I have successfully deployed my devops project with docker and kind cluster via NodePort with github Actions automatically",
   });
 });
 
