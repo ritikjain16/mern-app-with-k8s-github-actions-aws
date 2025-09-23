@@ -10,11 +10,12 @@ spec:
   #   - port: 5000
   #     targetPort: 5000
   #     nodePort: 30000
-  ports:
-    - port: 80
-      targetPort: 5000   # Your app container port
-  type: LoadBalancer
-  # type: ClusterIP
   # ports:
-  #   - port: 5000
-  #     targetPort: 5000   # Your app container port
+  # - port: 80
+  #   targetPort: 5000   # Your app container port
+  # type: LoadBalancer
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
