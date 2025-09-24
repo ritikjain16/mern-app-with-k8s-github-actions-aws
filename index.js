@@ -19,7 +19,7 @@ app.get("/api", (req, res) => {
 
 app.get("/api/hi", (req, res) => {
   res.status(200).send({
-    msg: "Hi, Harsha Ritik16082000 Harsha I have successfully deployed my devops project with docker and kind cluster via NodePort with github Actions automatically",
+    msg: "Hiuuh, Harsha Ritik16082000 Harsha I have successfully deployed my devops project with docker and kind cluster via NodePort with github Actions automatically",
   });
 });
 
