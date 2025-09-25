@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.get("/api", (req, res) => {
   res.status(200).send({
-    msg: "Hello, This 1111 is Node js CI CD Devops project rj16082000",
+    msg: "Hello, This is Node js CI CD Devops project rj16082000",
   });
 });
 
